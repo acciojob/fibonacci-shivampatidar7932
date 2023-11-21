@@ -1,20 +1,34 @@
-function fibonacci(num) {
-    if (num <= 0) {
-        console.log("Invalid input. Please provide a positive integer.");
-        return -1; 
-    }
+const fibonacci = (num) => {
+  // (Same fibonacci function code as before)
 
-    // Initialize the first two Fibonacci numbers
-    let fibSequence = [0, 1];
+  if (num <= 0) {
+    return "Invalid input. Please provide a positive integer.";
+  } else if (num === 1) {
+    return 0;
+  } else if (num === 2) {
+    return 1;
+  }
 
-    // Generate the Fibonacci sequence up to the num-th term
-    for (let i = 2; i <= num; i++) {
-        fibSequence.push(fibSequence[i - 1] + fibSequence[i - 2]);
-    }
+  let prev = 0;
+  let current = 1;
 
-   
-    return fibSequence[num];
+  for (let i = 3; i <= num; i++) {
+    const next = prev + current;
+    prev = current;
+    current = next;
+  }
+
+  return current;
+};
+
+let userInput = prompt("Enter a positive integer:");
+userInput = parseInt(userInput, 10);
+
+if (isNaN(userInput) || userInput <= 0) {
+  console.log("Invalid input. Please provide a positive integer.");
+} else {
+  const result = fibonacci(userInput);
+  console.log(`The ${userInput}-th Fibonacci number is: ${result}`);
 }
-let userInput = prompt();
-fibonacci(userInput);
+
 module.exports = fibonacci;
