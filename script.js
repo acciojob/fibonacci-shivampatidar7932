@@ -20,6 +20,8 @@ function fibonacci(num) {
 let userInput = prompt("Enter a positive integer: ");
 let num = parseInt(userInput);
 
+
+
 // Check if the input is a valid positive integer
 if (Number.isNaN(num) || num <= 0) {
     alert("Invalid input. Please enter a positive integer greater than 0.");
