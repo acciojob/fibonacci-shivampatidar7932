@@ -21,11 +21,10 @@ let userInput = prompt("Enter a positive integer: ");
 let num = parseInt(userInput);
 
 
-
 // Check if the input is a valid positive integer
 if (Number.isNaN(num) || num <= 0) {
     alert("Invalid input. Please enter a positive integer greater than 0.");
 } else {
     // Call the fibonacci function and display the result using alert
-    alert(`The ${num}th Fibonacci number is: ${fibonacci(num)}`);
+    alert(fibonacci(num));
 }
